@@ -1,50 +1,82 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: "Trispace", sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #a6f6f1;
+  font-family: 'Poppins', Arial;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    background-color: rgb(82, 80, 104);
+nav {
+  position: fixed;
+  width: 100%;
+  min-height: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #a6f6f1;
+  -webkit-transition: all 160ms ease-in-out;
+  transition: all 160ms ease-in-out;
 }
 
-.logo{
-    color: rgb(226, 226, 226);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
+nav .logo {
+  color: #ffabe1;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.nav-links{
-    display: flex;
-    justify-content: space-around;
-    width: 35%;
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
 }
 
-.nav-links li{
-    list-style: none;
+a {
+  text-decoration: none;
+  color: #212121;
+  padding: 0 1em;
 }
 
-.nav-links a{
-    color: rgb(226, 226, 226);
-    text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
+.nav-socials {
+  display: block;
 }
 
-.content {
-    padding-top: 10%;
-    text-align: center;
-    color: rgb(14, 14, 14);
+.nav-socials svg {
+  width: 24px;
+  height: 24px;
+  fill: #212121;
 }
 
-.content img{
-    padding-top: 10%;
-    width: 20%;
-    height: 20%;
+nav.scrolled {
+  -webkit-box-shadow: 0px 1px 6px #212121;
+          box-shadow: 0px 1px 6px #212121;
+  background-color: #213e3b;
 }
+
+nav.scrolled a {
+  color: #a6f6f1;
+}
+
+nav.scrolled svg {
+  fill: #a6f6f1;
+}
+
+.section1 {
+  height: 100vh;
+}
+
+.section2 {
+  height: 100vh;
+}
+
+.section3 {
+  height: 100vh;
+}
+/*# sourceMappingURL=main.css.map */
