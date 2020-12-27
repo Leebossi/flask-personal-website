@@ -4,7 +4,7 @@ body {
   background-color: #a6f6f1;
   font-family: 'Poppins', Arial;
   color: #213e3b;
-  font-size: 16px;
+  font-size: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -115,6 +115,36 @@ nav.scrolled svg {
   fill: #a6f6f1;
 }
 
+#to-the-top-btn {
+  visibility: hidden;
+  background-color: #213e3b;
+  border-radius: 50%;
+  position: fixed;
+  bottom: .75em;
+  right: .75em;
+  text-align: center;
+  width: 3em;
+  height: 3em;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+#to-the-top-btn img {
+  padding-top: .75em;
+  width: 20px;
+  height: 20px;
+}
+
+#to-the-top-btn.show {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+#to-the-top-btn.show:hover {
+  opacity: 1;
+}
+
 .page {
   display: -ms-grid;
   display: grid;
@@ -154,17 +184,23 @@ nav.scrolled svg {
 .hero {
   margin: 0;
   letter-spacing: 2px;
-  font-size: 64px;
+  font-size: 5em;
   -webkit-animation: fade-in 1.3s ease;
           animation: fade-in 1.3s ease;
 }
 
 .portrait-container {
-  background-color: white;
-  width: 200px;
   height: 300px;
   margin-left: 4em;
-  margin-bottom: 6em;
+  margin-bottom: 5.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.portrait-container img {
+  height: 100%;
+  border: 1px solid #ffabe1;
 }
 
 .icon {
@@ -215,6 +251,16 @@ nav.scrolled svg {
   width: 60px;
 }
 
+.me {
+  padding-top: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .bio {
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
@@ -224,19 +270,20 @@ nav.scrolled svg {
 }
 
 .skills {
-  background-color: #ffabe1;
+  padding-top: 20vh;
 }
 
 .skills-container {
+  background-color: #ffabe1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-column: 2/4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 5%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .skills-container .skill {
@@ -269,14 +316,15 @@ nav.scrolled svg {
 }
 
 .contact {
-  padding-top: 7em;
+  padding-top: 30vh;
+  padding-bottom: 10vh;
   margin-bottom: 5em;
 }
 
 .contact .contact-container {
   padding: 2em;
   padding-bottom: 7em;
-  margin: 5%;
+  margin: 0 20% 5% 20%;
   border: 1px solid #213e3b;
   border-radius: .25em;
   display: -ms-grid;
@@ -301,7 +349,7 @@ nav.scrolled svg {
 }
 
 .contact .contact-container .form-container {
-  width: 30em;
+  width: 15em;
 }
 
 .fade-in-element {
@@ -312,62 +360,12 @@ nav.scrolled svg {
 }
 
 .form {
-  width: 60%;
+  width: 80%;
+  font-size: 1em;
 }
 
 .form-field {
   position: relative;
-}
-
-.form-field input {
-  background-color: inherit;
-  width: 100%;
-  height: 100%;
-  padding-top: 20px;
-  border: none;
-  outline: none;
-}
-
-.form-field label {
-  position: absolute;
-  bottom: 0px;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  border-bottom: 1px solid #213e3b;
-}
-
-.form label::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: -1px;
-  width: 0%;
-  height: 100%;
-  border-bottom: 3px solid #ffabe1;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-.form-content {
-  position: absolute;
-  bottom: 5px;
-  left: 0px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.form input:valid + .label-name .form-content,
-.form input:focus + .label-name .form-content {
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 14px;
-  color: #ffabe1;
-}
-
-.form input:focus + .label-name::after {
-  width: 100%;
 }
 
 @-webkit-keyframes fade-in {
