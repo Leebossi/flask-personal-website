@@ -28,6 +28,13 @@
     <a href="#landing" id="to-the-top-btn"><img src="../static/up.svg" alt="up"></a>
 
     <section class="page landing" id="landing">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="flash flash-{{category}}">{{ message }}</div>
+                {% endfor %}
+        {% endwith %}
+
         <div class="details">
             <h1 class="hero">Aspiring</h1>
             <h1 class="hero">Web</h1>
@@ -69,35 +76,24 @@
             </div>
         </div>
     </section>
+
     <section class="contact" id="contact">
         <div class="contact-container">
-            <h1 class="title">Contact Me</h1>
-            <div class="form-container">
-                <form class="form" action="/form" method="POST">
-                    <div class="form-field">
-                        <input class="input" type="text" name="name" required autocomplete="off">
-                        <label for="name" class="label-name">
-                            <span class="form-content">Name</span>
-                        </label>
-                    </div>
-                    <div class="form-field">
-                        <input class="input" type="text" name="email" required autocomplete="off">
-                        <label for="email" class="label-name">
-                            <span class="form-content">Email</span>
-                        </label>
-                    </div>
-                    <div class="form-field comment-field">
-                        <textarea class="input" type="text" name="comment" id="comment" cols="21" rows="5" required></textarea>
-                        <label for="comment" class="label-name">
-                            <span class="form-content">Comment</span>
-                        </label>
-                    </div>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+            <div class="title">CONTACT ME</div>
+            <form  action="#" method="POST" class="form">
+                {{ form.hidden_tag() }}
+                
+                {{ form.name(placeholder='NAME') }}
+
+                {{ form.email(placeholder='EMAIL') }}
+
+                {{ form.message(placeholder='MESSAGE') }}
+
+                {{ form.submit }}
+            </form>
             <div class="contact-info">
-                <p>+3587603021</p>
-                <p>leevi.ossi@gmail.com</p>
+                <p>leevi.ossi@hotmail.com</p>
+                <p>+358 407603021</p>
             </div>
         </div>
     </section>
