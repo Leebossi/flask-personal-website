@@ -122,11 +122,6 @@ nav.scrolled {
     }
 }
 
-.flash {
-    grid-column: 2/4;
-    border: 2px solid #213e3b;
-}
-
 .page {
     display: grid;
     grid-template-columns: 5% 1fr 1fr 5%;
@@ -258,6 +253,18 @@ nav.scrolled {
     padding-bottom: 10vh;
     margin-bottom: 5em;
 
+    .flash {
+        padding: 0;
+        font-size: 2em;
+        display: flex;
+        border-radius: 0.25em;
+        align-content: center;
+        justify-content: center;
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 3vh;
+    }
+
     .contact-container {
         padding: 2em;
         padding-bottom: 7em;
@@ -298,7 +305,7 @@ nav.scrolled {
         width: 30em;
         height: 3em;
         padding: 0px 15px 0px 15px;
-        background: transparent;
+        background: inherit;
         outline: none;
         color: #213e3b;
         border: solid 2px #213e3b;
@@ -333,7 +340,7 @@ nav.scrolled {
     }
     
     #submit {
-        width: 32.65em;
+        width: 100%;
         padding: 0;
         color: #213e3b;
         outline:none;
@@ -344,6 +351,10 @@ nav.scrolled {
     
     #submit:hover {
         background-color: #ffabe1;
+    }
+
+    .invalid-feedback span {
+        color: red;
     }
 }
 

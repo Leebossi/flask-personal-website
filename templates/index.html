@@ -28,13 +28,6 @@
     <a href="#landing" id="to-the-top-btn"><img src="../static/up.svg" alt="up"></a>
 
     <section class="page landing" id="landing">
-
-        {% with messages = get_flashed_messages(with_categories=true) %}
-                {% for category, message in messages %}
-                    <div class="flash flash-{{category}}">{{ message }}</div>
-                {% endfor %}
-        {% endwith %}
-
         <div class="details">
             <h1 class="hero">Aspiring</h1>
             <h1 class="hero">Web</h1>
@@ -46,6 +39,7 @@
             <img src="../static/img/leevi-2.jpg" alt="Leevi Ossi">
         </div>
     </section>
+
     <section class="page me" id="bio">
         <div class="bio">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab porro voluptatum sed temporibus provident rerum laborum voluptates repudiandae quos vel, laudantium suscipit dolor quas aspernatur officia iste, dolorum id ipsam? Impedit dolore maiores voluptate molestias? Facilis quisquam ut soluta quis.</p>
@@ -78,15 +72,27 @@
     </section>
 
     <section class="contact" id="contact">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="flash flash-{{category}}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
         <div class="contact-container">
             <div class="title">CONTACT ME</div>
-            <form  action="#" method="POST" class="form">
+            {% if form.email.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form  action="#contact" method="POST" autocomplete="off" class="form">
                 {{ form.hidden_tag() }}
                 
                 {{ form.name(placeholder='NAME') }}
 
                 {{ form.email(placeholder='EMAIL') }}
-
+                
                 {{ form.message(placeholder='MESSAGE') }}
 
                 {{ form.submit }}

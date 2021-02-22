@@ -145,13 +145,6 @@ nav.scrolled svg {
   opacity: 1;
 }
 
-.flash {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-column: 2/4;
-  border: 2px solid #213e3b;
-}
-
 .page {
   display: -ms-grid;
   display: grid;
@@ -334,6 +327,24 @@ nav.scrolled svg {
   margin-bottom: 5em;
 }
 
+.contact .flash {
+  padding: 0;
+  font-size: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0.25em;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
+  margin-bottom: 3vh;
+}
+
 .contact .contact-container {
   padding: 2em;
   padding-bottom: 7em;
@@ -391,7 +402,7 @@ nav.scrolled svg {
   width: 30em;
   height: 3em;
   padding: 0px 15px 0px 15px;
-  background: transparent;
+  background: inherit;
   outline: none;
   color: #213e3b;
   border: solid 2px #213e3b;
@@ -428,7 +439,7 @@ nav.scrolled svg {
 }
 
 .form #submit {
-  width: 32.65em;
+  width: 100%;
   padding: 0;
   color: #213e3b;
   outline: none;
@@ -439,6 +450,10 @@ nav.scrolled svg {
 
 .form #submit:hover {
   background-color: #ffabe1;
+}
+
+.form .invalid-feedback span {
+  color: red;
 }
 
 .fade-in-element {
