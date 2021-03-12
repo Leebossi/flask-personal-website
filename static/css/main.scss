@@ -216,6 +216,7 @@ nav.scrolled {
 
 .skills {
     padding-top: 20vh;
+    padding-bottom: 20vh;
 }
 
 .skills-container {
@@ -249,7 +250,7 @@ nav.scrolled {
 }
 
 .contact {
-    padding-top: 30vh;
+    padding-top: 20vh;
     padding-bottom: 10vh;
     margin-bottom: 5em;
 
@@ -263,6 +264,14 @@ nav.scrolled {
         align-self: center;
         justify-self: center;
         margin-bottom: 3vh;
+    }
+
+    .error {
+        padding: 0;
+        color: #213e3b;
+        outline:none;
+        border: solid 2px #213e3b;
+        border-radius: 0.25em;
     }
 
     .contact-container {
@@ -302,6 +311,8 @@ nav.scrolled {
     }
     
     input {
+        font-size: inherit;
+        font-family: inherit;
         width: 30em;
         height: 3em;
         padding: 0px 15px 0px 15px;
@@ -320,6 +331,7 @@ nav.scrolled {
     
     textarea {
         font-family: inherit;
+        font-size: inherit;
         width: 30em;
         max-width: 30em;
         height: 10em;
