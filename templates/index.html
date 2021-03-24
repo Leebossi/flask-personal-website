@@ -30,10 +30,12 @@
     <section class="page landing" id="landing">
         <div class="details">
             <h1 class="hero">Aspiring</h1>
-            <h1 class="hero">Web</h1>
+            <h1 class="hero hero-highligth">Web</h1>
             <h1 class="hero">Developer</h1>
-            <p>I'n need of a website?</p>
-            <a class="button" href="#">Let's talk 🤙 </a>
+            <!-- 
+            <small>want little something something?</small>
+            <a class="button" href="#contact">Let's talk</a>
+            -->
         </div>
         <div class="portrait-container">
             <img src="../static/img/leevi-2.jpg" alt="Leevi Ossi">
@@ -45,35 +47,34 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab porro voluptatum sed temporibus provident rerum laborum voluptates repudiandae quos vel, laudantium suscipit dolor quas aspernatur officia iste, dolorum id ipsam? Impedit dolore maiores voluptate molestias? Facilis quisquam ut soluta quis.</p>
         </div>
     </section>
+
     <section class="skills" id="skills">
         <div class="skills-container">
-            <div class="skill">
-                <div class="icon-container">
-                    <img class="icon" src="../static/dev.svg" alt="development">
-                </div>
-                <p class="subtitle">Development</p>
-                <p>
-                    Python, Java, HTML, CSS, Sass, Javascript,
-                    Flask, Django, Bootstrap.
-                </p>
-            </div>
-            <div class="skill">
-                <div class="icon-container">
-                    <img class="icon" src="../static/server.svg" alt="server">
-                </div>
-                <p class="subtitle">Networks and security</p>
-                <p>
-                    Understanding of basic networking protocols, routing and switching protocols, firewall operations,
-                    Virtualization, storage systems (NAS, NFS, SMB), basic understanding of penetration testing, different Linux distros
-                    (Ubuntu, Debian, Kali). Not afraid of the command line!
-                </p>
+            <div class="skills-details">
+                <h1 class="title">My Skills</h1>
+                <ul class="skills-list">
+                    <li class="skill-tag">HTML</li>
+                    <li class="skill-tag">CSS</li>
+                    <li class="skill-tag">JAVASCRIPT</li>
+                    <li class="skill-tag">PYTHON</li>
+                    <li class="skill-tag">JAVA</li>
+                    <li class="skill-tag">FLASK</li>
+                    <li class="skill-tag">DJANGO</li>
+                    <li class="skill-tag">SASS</li>
+                </ul>
+                <ul class="skills-list">
+                    <li class="skill-tag">SQL DATABASES</li>
+                    <li class="skill-tag">GIT</li>
+                    <li class="skill-tag">LINODE</li>
+                    <li class="skill-tag">CISCO CCNA</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
         <div class="contact-container">
-            <div class="title">CONTACT ME</div>
+            <h1 class="title">Contact Me</h1>
             {% if form.email.errors %}
                 <div class="invalid-feedback">
                     {% for error in form.email.errors %}
@@ -125,6 +126,7 @@
             }
         };
     </script>
+
     <script>
         $(document).ready(function(){
           // Add smooth scrolling to all links
@@ -151,6 +153,7 @@
           });
         });
         </script>
+
         <script>
             var btn = $('#to-the-top-btn');
 
@@ -162,5 +165,6 @@
             }
             });
         </script>
+        
 </body>
 </html>

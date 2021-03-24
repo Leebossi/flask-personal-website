@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_scss import Scss
 from forms import ContactForm
 from flask_mail import Mail, Message
 import os
 
 app = Flask(__name__)
+Scss(app)
 
 app.config['SECRET_KEY'] = '930ccf70f3959160387f7e063494399d'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
