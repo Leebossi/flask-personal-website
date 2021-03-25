@@ -15,6 +15,29 @@ ul {
     padding: 0;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    z-index: 6;
+  }
+  
+  .tooltip .tooltiptext {
+    background-color: #a6f6f1;
+    visibility: hidden;
+    width: 120px;
+    text-align: center;
+    border: 2px solid #213e3b;
+    border-radius: 0.25em;
+    padding: 5px 0;
+    position: absolute;
+    top: -2vh;
+    right: 105%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
 .navbar {
     display: grid;
     grid-template-columns: 5% 1fr 1fr 1fr 5%;
@@ -93,9 +116,14 @@ nav.scrolled {
     svg {
         fill: #a6f6f1;
     }
+    .hamburger div{
+        background-color: #a6f6f1;
+    }
 }
 
 .hamburger {
+    grid-column: 4/5;
+    justify-self: right;
     display: none;
 }
 
@@ -143,13 +171,16 @@ nav.scrolled {
 }
 
 .title {
-        display: flex;
-        align-self: center;
-        justify-self: center;
+        text-align: center;
         color: #ffabe1;
         margin: 0;                
         letter-spacing: 2px;
         font-size: 4em;
+}
+
+.landing-container {
+    display: flex;
+    justify-content: center;
 }
 
 .hero {
@@ -167,11 +198,6 @@ nav.scrolled {
     .highligth {
         color: #ffabe1;
     }
-}
-
-.landing {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
 .portrait-container {
@@ -196,9 +222,12 @@ nav.scrolled {
 .skills-container {
     align-self: center;
     justify-content: center;
+    width: 50em;
 }
 
 .skills-details{
+    display: flex;
+    flex-direction: column;
     margin: 2em;
     border: 2px solid #213e3b;
     background: #a6f6f1;
@@ -212,21 +241,22 @@ nav.scrolled {
 }
 
 .skills-list {
-    list-style: none;
     display: flex;
-    justify-content: center;
     margin: 0;
+    flex-wrap: wrap;
 
-    li {
-        list-style: none;
+    .skill-tag {
+        cursor: default;
+        float: left;
+        text-transform: uppercase;
         margin: 0.25em;
-        padding: 0.75em;
+        padding: 0.25em 0.5em;
         border: 2px solid #213e3b;
         border-radius: 0.25em;
         transition: all 0.3s ease-in-out;
     }
 
-    li:hover {
+    .skill-tag:hover {
         background: #213e3b;
         color: #a6f6f1;
     }
@@ -330,49 +360,67 @@ nav.scrolled {
 }
 
 @media only screen and (max-width: 768px) {
-    
-    body {
-        grid-template-columns: 1fr;
+    .hero {
+        font-size: 2.5em;
     }
-    .landing {
-        flex-direction: column;
-    }
-    .details {
-        text-align: center;
-        margin-right: 0;
+    .portrait-container {
+        height: 250px;
     }
     .bio {
-        padding: 0 1em 0 1em;
+        padding: 0 10%;
     }
-}
+} 
 
-@media screen and (max-width: 570px) {
-
-    .hamburger {
-        display: block;
+@media only screen and (max-width: 580px) {
+    .navbar {
+        grid-template-columns: 5% 1fr 5%;
     }
     .nav-links {
-        display: none;
+        transform: translateY(-100px);
     }
     .nav-socials {
-        display: none;
+        transform: translateY(-100px);
+    }
+    .hamburger {
+        display: block;
+        grid-column: 4/5;
+        grid-row: 1/2;
+        justify-self: right;
+        padding-right: 5%;
+    }
+    .landing-container {
+        flex-direction: column;
+    }
+    .hero {
+        text-align: center;
+        font-size: 2em;
     }
 }
 
-@media only screen and (max-width: 375px) {
-    .hero {
-        font-size: 2em;
-        letter-spacing: 0;
-        margin: 0;
-        padding: 0;
+@media only screen and (max-width: 425px) {
+    #to-the-top-btn {
+        width: 2em;
+        height: 2em;
+
+        img {
+            padding-top: 0.495em;
+            width: 13px;
+            height: 13px;
+        }
+    }
+    .bio {
+        padding: 0 5%;
+        font-size: 1.2em;
+        text-align: left;
     }
     .title {
         font-size: 2em;
     }
-    .details {
-        font-size: 1.5em;
+    .skills-details {
+        margin: 2%;
+        padding: 2%;
     }
-    .contact {
-        padding-bottom: 5vh;
+    .skills-list {
+        float: center;
     }
 }

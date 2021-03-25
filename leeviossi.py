@@ -18,6 +18,10 @@ mail = Mail(app)
 @app.route("/", methods=["GET", "POST"])
 def home():
     form = ContactForm()
+    skills = [
+        'html', 'css', 'javascript', 'python', 'java', 'flask', 'django', 'sass', 
+        'sql databases', 'git', 'linode', 'cisco ccna'
+        ]
     if form.validate_on_submit():
         flash(f'Thank you for contacting me {form.name.data}! I\'ll be in touch! ', 'success')
         name = form.name.data
@@ -27,7 +31,7 @@ def home():
         msg.body = message
         mail.send(msg)
         return redirect(url_for('home'))
-    return render_template("index.html", form=form)
+    return render_template("index.html", form=form, skills=skills)
 
 def contact():
     form = ContactForm()
