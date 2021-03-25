@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 Scss(app)
 
-app.config['SECRET_KEY'] = '930ccf70f3959160387f7e063494399d'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_FLASK_KEY')
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = '465'
 app.config['MAIL_USE_SSL'] = True
