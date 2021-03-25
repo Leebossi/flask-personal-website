@@ -23,7 +23,7 @@ def home():
         name = form.name.data
         email = form.email.data
         message = form.message.data
-        msg = Message(f'Contact from {email}', sender=email, recipients=['leevi.ossi@hotmail.com'])
+        msg = Message(f'Contact from {email}', sender=email, recipients=['leevi.ossi@gmail.com'])
         msg.body = message
         mail.send(msg)
         return redirect(url_for('home'))
