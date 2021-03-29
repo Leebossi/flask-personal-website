@@ -33,5 +33,23 @@ def home():
         return redirect(url_for('home'))
     return render_template("index.html", form=form, skills=skills)
 
+@app.route("/fi", methods=["GET", "POST"])
+def homefi():
+    form = ContactForm()
+    skills = [
+        'html', 'css', 'javascript', 'python', 'java', 'flask', 'django', 'sass', 
+        'sql databases', 'git', 'linode', 'cisco ccna'
+        ]
+    if form.validate_on_submit():
+        flash(f'Thank you for contacting me {form.name.data}! I\'ll be in touch! ', 'success')
+        name = form.name.data
+        email = form.email.data
+        message = form.message.data
+        msg = Message(f'Contact from {email}', sender=email, recipients=['leevi.ossi@gmail.com'])
+        msg.body = message
+        mail.send(msg)
+        return redirect(url_for('homefi'))
+    return render_template("./fi/index.html", form=form, skills=skills)
+
 if __name__ == "__main__":
     app.run(debug=True)
