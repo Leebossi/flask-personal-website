@@ -41,7 +41,7 @@ def homefi():
         'sql databases', 'git', 'linode', 'cisco ccna'
         ]
     if form.validate_on_submit():
-        flash(f'Thank you for contacting me {form.name.data}! I\'ll be in touch! ', 'success')
+        flash(f'Kiitos kun otit minuun yhteyttä {form.name.data}! Olen yhteydessä sinuun mahdollisimman pian! ', 'success')
         name = form.name.data
         email = form.email.data
         message = form.message.data
@@ -50,6 +50,11 @@ def homefi():
         mail.send(msg)
         return redirect(url_for('homefi'))
     return render_template("./fi/index.html", form=form, skills=skills)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 if __name__ == "__main__":
     app.run(debug=True)

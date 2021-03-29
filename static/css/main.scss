@@ -358,6 +358,35 @@ nav.scrolled {
     }
 }
 
+.error-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .notfound {
+        margin: 0;
+        padding: 0 2em;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid $dark;
+        border-radius: 0.25em;
+        text-align: center;
+    
+        h1 {
+            margin: 0;
+            font-size: 4em;
+            color: $pink;
+        }
+    
+        a {
+            color: $pink;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+}
+
 @media only screen and (max-width: 768px) {
 
     .landing-container {
@@ -524,5 +553,12 @@ nav.scrolled {
     .contact .flash {
         font-size: 1.2em;
         text-align: center;
+    }
+
+    .error-container {
+        
+        .notfound {
+            border: none;
+        }
     }
 }
