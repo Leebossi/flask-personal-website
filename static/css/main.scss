@@ -375,6 +375,7 @@ nav.scrolled {
         
         .bio {
             padding: 0 10%;
+            font-size: 1.2em;
         }
     }
 } 
@@ -474,6 +475,13 @@ nav.scrolled {
 
         .portrait-container {
             padding-top: 2em;
+        }
+    }
+
+    .me {
+
+        .bio {
+            font-size: 1.5em;
         }
     }
 }
